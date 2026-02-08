@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Other Businesses | GradConnect Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1A5F7A;
+            --secondary-color: #57C5B6;
+            --accent-color: #159895;
+            --light-color: #F5F5F5;
+            --dark-color: #2C3333;
+            --gray-color: #777;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text span:first-child {
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .logo-text span:last-child {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(211, 159, 43, 1);
+            margin-top: 2px;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 95, 122, 0.9), rgba(21, 152, 149, 0.9)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card.washing {
+            border-top-color: #36B5B0;
+        }
+
+        .service-card.catering {
+            border-top-color: #FF6B6B;
+        }
+
+        .service-card.hostel {
+            border-top-color: #4ECDC4;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .service-icon.washing {
+            background-color: #36B5B0;
+        }
+
+        .service-icon.catering {
+            background-color: #FF6B6B;
+        }
+
+        .service-icon.hostel {
+            background-color: #4ECDC4;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            margin-bottom: 20px;
+            color: var(--gray-color);
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-call {
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 10px;
+        }
+
+        .btn-call:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray-color);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            min-width: 250px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text span:first-child {
+                font-size: 1.5rem;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="GradConnect-icon.png" alt="Grad Connect Logo" style="width: 75px; height: 75px;">
+                    </div>
+                    <div class="logo-text">
+                        <span>GradConnect</span>
+                        <span>OUR OTHER BUSINESSES</span>
+                    </div>
+                </div>
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Jobs
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Essential Services for Students & Young Professionals</h1>
+            <p>Beyond career connections, we provide essential services to make student life easier and more comfortable. Contact us via WhatsApp for any of these services.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <!-- Washing Service -->
+                <div class="service-card washing">
+                    <div class="service-icon washing">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Professional Washing Service</h3>
+                    <p>Convenient laundry services for busy students and professionals. We pick up, wash, dry, fold, and deliver your clothes right to your doorstep.</p>
+                    
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Same-day service available</li>
+                        <li><i class="fas fa-check-circle"></i> Free pickup and delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Eco-friendly detergents</li>
+                        <li><i class="fas fa-check-circle"></i> Special care for delicate fabrics</li>
+                        <li><i class="fas fa-check-circle"></i> Student discounts available</li>
+                    </ul>
+                    
+                    <a href="https://wa.me/256771206831?text=Hello!%20I'm%20interested%20in%20your%20washing%20services.%20Can%20you%20provide%20more%20information%3F" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                    
+                    <a href="tel:+256771206831" class="btn btn-call">
+                        <i class="fas fa-phone"></i> Call: +256 771 206 831
+                    </a>
+                </div>
+                
+                <!-- Catering Service -->
+                <div class="service-card catering">
+                    <div class="service-icon catering">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Catering & Food Services</h3>
+                    <p>Delicious, affordable catering for student events, study groups, meetings, and special occasions. We provide meals that fuel success.</p>
+                    
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Event catering for 10-500 people</li>
+                        <li><i class="fas fa-check-circle"></i> Daily meal plans for students</li>
+                        <li><i class="fas fa-check-circle"></i> Variety of cuisines available</li>
+                        <li><i class="fas fa-check-circle"></i> Dietary restrictions accommodated</li>
+                        <li><i class="fas fa-check-circle"></i> Budget-friendly options</li>
+                    </ul>
+                    
+                    <a href="https://wa.me/256771206831?text=Hello!%20I'm%20interested%20in%20your%20catering%20services.%20Can%20you%20provide%20more%20information%3F" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                    
+                    <a href="tel:+256771206831" class="btn btn-call">
+                        <i class="fas fa-phone"></i> Call: +256 771 206 831
+                    </a>
+                </div>
+                
+                <!-- Hostel Service -->
+                <div class="service-card hostel">
+                    <div class="service-icon hostel">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Student Hostel Services</h3>
+                    <p>Safe, comfortable, and affordable accommodation for university students. Our hostels are designed for productive student living.</p>
+                    
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Secure 24/7 premises</li>
+                        <li><i class="fas fa-check-circle"></i> High-speed internet included</li>
+                        <li><i class="fas fa-check-circle"></i> Study areas and common rooms</li>
+                        <li><i class="fas fa-check-circle"></i> On-site laundry facilities</li>
+                        <li><i class="fas fa-check-circle"></i> Close to major universities</li>
+                    </ul>
+                    
+                    <a href="https://wa.me/256771206831?text=Hello!%20I'm%20interested%20in%20your%20hostel%20services.%20Can%20you%20provide%20more%20information%3F" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+                    </a>
+                    
+                    <a href="tel:+256771206831" class="btn btn-call">
+                        <i class="fas fa-phone"></i> Call: +256 771 206 831
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us for Any Service</h2>
+            <p>We're here to help with all your needs. Reach out to us via WhatsApp for quick responses and bookings.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+256 771 206 831</p>
+                    <p>Fastest way to reach us</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone Call</h3>
+                    <p>+256 771 206 831</p>
+                    <p>Available 8 AM - 8 PM</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>services@gradconnect.ug</p>
+                    <p>Response within 24 hours</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://wa.me/256771206831" target="_blank" class="btn btn-whatsapp" style="padding: 15px 35px; font-size: 1.1rem;">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <div class="logo-icon">GC</div>
+                        <div class="logo-text">
+                            <span>GradConnect</span>
+                            <span style="color: var(--secondary-color);">ESSENTIAL SERVICES</span>
+                        </div>
+                    </div>
+                    <p>Providing essential services to make student life easier and more comfortable in Uganda.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/256771206831" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#washing">Washing Services</a></li>
+                        <li><a href="#catering">Catering Services</a></li>
+                        <li><a href="#hostel">Hostel Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Information</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 771 206 831</li>
+                        <li><i class="fas fa-envelope"></i> services@gradconnect.ug</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +256 771 206 831</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="gradconnect.html">Job Portal</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 GradConnect Services. All rights reserved. | Part of the GradConnect Uganda family</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // WhatsApp button enhancement
+        document.querySelectorAll('.btn-whatsapp').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Track WhatsApp clicks (in a real app, you would send this to analytics)
+                console.log('WhatsApp service inquiry clicked');
+            });
+        });
+    </script>
+</body>
+</html>

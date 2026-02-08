@@ -61,8 +61,8 @@
             font-weight: 800;
             color: var(--primary-color);
         }
-
-        /*.logo-icon {
+        /*
+        .logo-icon {
             width: 50px;
             height: 50px;
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -73,8 +73,8 @@
             color: white;
             font-weight: bold;
             font-size: 1.5rem;
-        }*/
-
+        }
+        */
         .logo-text {
             display: flex;
             flex-direction: column;
@@ -172,6 +172,21 @@
         .btn-whatsapp:hover {
             background-color: #128C7E;
             transform: translateY(-2px);
+        }
+
+        .btn-businesses {
+            background-color: #FF6B6B;
+            color: white;
+            margin: 30px auto;
+            display: block;
+            font-size: 1.1rem;
+            padding: 12px 35px;
+        }
+
+        .btn-businesses:hover {
+            background-color: #FF5252;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.3);
         }
 
         .mobile-toggle {
@@ -692,6 +707,26 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #ddd;
             font-size: 0.9rem;
+        }
+
+        /* Our Businesses Section */
+        .our-businesses {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .our-businesses h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+
+        .our-businesses p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray-color);
+            font-size: 1.1rem;
         }
 
         /* Responsive Design */
@@ -1256,6 +1291,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="job-card" data-job-id="15" data-category="finance">
                 <div class="job-info">
                     <h3>Customer Service Representative</h3>
@@ -1278,7 +1314,7 @@
                         <button class="share-btn twitter" data-platform="twitter" data-job-id="15"><i class="fab fa-twitter"></i></button>
                         <button class="share-btn email" data-platform="email" data-job-id="15"><i class="fas fa-envelope"></i></button>
                     </div>
-                </div> 
+                </div>
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
@@ -1318,6 +1354,17 @@
             <a href="https://wa.me/256763832123" target="_blank" class="btn btn-whatsapp" style="margin-top: 15px; padding: 12px 30px;">
                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
             </a>
+        </div>
+    </section>
+
+    <!-- Our Other Businesses Section -->
+    <section class="our-businesses">
+        <div class="container">
+            <h2>Discover Our Other Services</h2>
+            <p>Beyond connecting students to careers, we also offer essential services for university students and young professionals in Uganda.</p>
+            <button class="btn btn-businesses" id="viewBusinessesBtn">
+                <i class="fas fa-briefcase"></i> View Our Other Businesses
+            </button>
         </div>
     </section>
 
@@ -1773,6 +1820,12 @@
             // Reset category tabs to "All Jobs"
             categoryTabs.forEach(tab => tab.classList.remove('active'));
             categoryTabs[0].classList.add('active');
+        });
+
+        // View Our Businesses Button
+        document.getElementById('viewBusinessesBtn').addEventListener('click', function() {
+            // Create and open a new window for the businesses page
+            window.open('gradconnect-businesses.html', '_blank');
         });
     </script>
 </body>
